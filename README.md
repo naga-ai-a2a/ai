@@ -1,7 +1,7 @@
 # ai
-Artificial Intelligence
+Artificial Intelligence, the modern way
 
-##
+## AI Spaces
 AI - LLM, RAG, Agentic, LangChain
 
 ## llm
@@ -19,3 +19,5 @@ Popular models you can pull from the registry include:
 * Coding: `qwen3-coder`, `devstral`
 * Reasoning: `deepseek-r1`, `nemotron-3-super`
 
+## LangChain
+`LangChain` dir has `langchain` related files - working code
