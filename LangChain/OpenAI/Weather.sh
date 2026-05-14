@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [ $# -ne 1 ]; then
-    printf "\n\tNeed <model like openai:gpt-5.4> as arg\n\n"
+if [ $# -ne 2 ]; then
+    printf "\n\tNeed <model like openai:gpt-5.4> <city like pune> as args\n\n"
     exit 9
 fi
 
@@ -11,4 +11,4 @@ source .venv/bin/activate
 
 uv pip install -q -r Requirements.txt
 
-python Weather.py $1 | jq
+python Weather.py $1 $2 | jq

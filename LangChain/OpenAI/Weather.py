@@ -13,18 +13,21 @@ def get_weather(city: str) -> str:
 
 args = sys.argv
 
-if (len(args)) != 2:
-    print("\n\tNeed <model like openai:gpt-5.4> as arg\n")
+if (len(args)) != 3:
+    print("\n\tNeed <model like openai:gpt-5.4> <city like pune> as args\n")
     sys.exit()
 
+model = sys.argv[1]
+city = sys.argv[2]
+
 agent = create_agent(
-    model=sys.argv[1],
+    model=model,
     tools=[get_weather],
     system_prompt="You are a helpful assistant",
 )
 
 result = agent.invoke(
-    {"messages": [{"role": "user", "content": "What's the weather in San Francisco?"}]}
+    {"messages": [{"role": "user", "content": f"What's the weather in {city}?"}]}
 )
 
 fake_json = str(result["messages"][-1].content_blocks)
