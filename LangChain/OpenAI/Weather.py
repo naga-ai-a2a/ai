@@ -8,11 +8,17 @@ import json_repair
 from langchain.agents import create_agent
 
 def get_weather(city: str) -> str:
-    """Get weather for a given city."""
+    """Get weather for a given city"""
     return f"It's always sunny in {city}!"
 
+args = sys.argv
+
+if (len(args)) != 2:
+    print("\n\tNeed <model like openai:gpt-5.4> as arg\n")
+    sys.exit()
+
 agent = create_agent(
-    model="openai:gpt-5.4",
+    model=sys.argv[1],
     tools=[get_weather],
     system_prompt="You are a helpful assistant",
 )
