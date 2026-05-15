@@ -166,7 +166,6 @@ func main() {
 	toolPropertiesMap.Set(
 		"location", 
 		api.ToolProperty{
-			// Type: "",
 			Description: "Name of city like 'San Jose'",
 		},
 	)
@@ -240,9 +239,7 @@ func getWeather(location string) string {
 		fmt.Println("getWeather: err2:", err)
 	}
 	jsonString := string(body)
-	// fmt.Println("jsonString:", jsonString)
 	jsonString = strings.ReplaceAll(jsonString, "{", fmt.Sprintf(`{"location":"%s",`, location))
-	// fmt.Println("jsonString:", jsonString)
 	body = []byte(jsonString)
 	var formattedJSON bytes.Buffer
 	err = json.Indent(&formattedJSON, body, "", "    ")
