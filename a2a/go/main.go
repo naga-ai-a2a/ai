@@ -208,7 +208,12 @@ func main() {
 	})
 
 	// handle the rare intermittent issue
+	i := 0
 	for {
+		i += 1
+		if i > 3 {
+			break
+		}
 		if strings.TrimSpace(singleLine) == "" {
 			time.Sleep(1000)
 			main()
