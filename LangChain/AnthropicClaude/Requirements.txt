@@ -1,0 +1,2 @@
+langchain[anthropic]
+json_repair
