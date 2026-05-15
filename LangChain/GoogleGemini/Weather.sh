@@ -3,7 +3,7 @@
 cd `dirname $0`
 
 if [ $# -ne 2 ]; then
-    printf "\n\tNeed <model like openai:gpt-5.4> <city like pune> as args\n\n"
+    printf "\n\tNeed <model like google_genai:gemini-2.5-flash-lite> <city like pune> as args\n\n"
     exit 9
 fi
 
